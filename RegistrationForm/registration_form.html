@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1 id="title">Registration Form</h1>
+    <p id="description">Please fill out this form with the required information</p>
+
+    <form id="survey-form" action="process_form.php" method="post">
+        <div>
+            <label for="name" id="name-label">Name</label>
+            <input id="name" name="name" type="text" placeholder="Enter your name" required>
+        </div>
+
+        <div>
+            <label for="email" id="email-label">E-mail</label>
+            <input id="email" name="email" type="email" placeholder="Enter your email" required>
+        </div>
+
+        <div>
+            <label for="number" id="number-label">Age (optional)</label>
+            <input id="number" name="number" type="number" min="18" max="100">
+        </div>
+
+        <div>
+            <label for="dropdown">What is your UX/UI experience level?</label>
+            <select id="dropdown" name="dropdown">
+                <option value="" disabled selected>(select one)</option>
+                <option value="Beginner">Beginner</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Advanced">Advanced</option>
+            </select>
+        </div>
+
+        <p>Which type of device do you prefer to use for testing the product?</p>
+        <div>
+            <label for="device-desktop">
+                <input id="device-desktop" value="Desktop" name="device" type="radio" checked>Desktop
+            </label>
+        </div>
+        <div>
+            <label for="device-tablet">
+                <input id="device-tablet" value="Tablet" name="device" type="radio">Tablet
+            </label>
+        </div>
+        <div>
+            <label for="device-smartphone">
+                <input id="device-smartphone" value="Smartphone" name="device" type="radio">Smartphone
+            </label>
+        </div>
+
+        <p>Which aspects of the product are you interested in testing?</p>
+        <div><label><input value="Navigation and overall UX" name="interests[]" type="checkbox">Navigation and overall
+                UX</label></div>
+        <div><label><input value="Interface and design" name="interests[]" type="checkbox">Interface and design</label>
+        </div>
+        <div><label><input value="Specific functionality" name="interests[]" type="checkbox">Specific
+                functionality</label></div>
+        <div><label><input value="Performance and speed" name="interests[]" type="checkbox">Performance and
+                speed</label></div>
+        <div><label><input value="Accessibility" name="interests[]" type="checkbox">Accessibility</label></div>
+        <div><label><input value="Compatibility across devices" name="interests[]" type="checkbox">Compatibility across
+                devices</label></div>
+
+        <div id="textarea">
+            <label for="question">Do you have any other suggestions or expectations regarding the product?</label>
+            <textarea id="question" name="question" rows="3" cols="30"
+                placeholder="Please share any thoughts or ideas to improve the testing experience."></textarea>
+        </div>
+        <div id="buttons-container">
+            <button id="submit" type="submit">Submit</button>
+            <button id="reset" type="reset">Reset</button>
+        </div>
+    </form>
+</body>
+
+</html>
